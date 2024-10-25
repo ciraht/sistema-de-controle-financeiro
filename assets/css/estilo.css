@@ -148,10 +148,17 @@
 
 .adicionar{
     background-color: white;
-    height: 250px;
+    height: 300px;
     width: 850px;
     margin-left: 210px;
     box-shadow: #313131 7px 7px 7px;
+    border-radius: 10px;
+}
+
+.texto_quadro{
+    font-size: 28px;
+    margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .info{
@@ -159,12 +166,32 @@
     margin-left: 150px;
 }
 
-.inputo{
+.inputo1{
     width: 450px;
     height: 27px;
-    margin-left: 30px;
+    margin-left: 13px;
+}
+
+.inputo2{
+    width: 450px;
+    height: 27px;
+    margin-left: 10px;
+
+}
+
+.inputo3{
+    width: 450px;
+    height: 27px;
+    margin-left: 21px;
+
 }
 
 .botao{
-    
+    height: 30px;
+    width: 100px;
+    margin-left: 86%;
+    margin-top: 10px;
+    font-size: 20px;
 }
+
+
