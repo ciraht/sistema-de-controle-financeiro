@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.between{
+    display: flex;
+    justify-content: space-between;
+}
+
 .img_fundo_1{
     background-image: url(../img/imagem_fundo.png);
 }
@@ -120,14 +125,7 @@
     box-shadow: #313131 7px 7px 7px;
 }
 
-.grafico{
-    background-color: white;
-    height: 300px;
-    width: 850px;
-    margin-top: 100px;
-    margin-left: 210px;
-    box-shadow: #313131 7px 7px 7px;
-}
+
 
 .rodape{
     margin-top: 30px;
@@ -142,7 +140,7 @@
     background-color: white;
     height: 500px;
     width: 850px;
-    margin-left: 210px;
+    /* margin-left: 210px; */
     box-shadow: #313131 7px 7px 7px;
 }
 
@@ -150,51 +148,73 @@
 /* pagina despesas e receitas */
 
 .adicionar{
-    background-color: white;
+    background-color: rgb(247, 244, 244);
     height: 300px;
-    width: 850px;
-    margin-left: 210px;
-    box-shadow: #313131 7px 7px 7px;
-    border-radius: 10px;
+    width: 600px;
+    box-shadow: #313131 10px 7px 20px;
+    border-radius: 0px 10px 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+
+.azul{
+    height: 300px;
+    width: 250px;
+
+    box-shadow: #313131 15px 7px 20px;
+    background-color: blue;
+    border-radius: 10px 0px 0px 10px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: end;
 }
 
 .texto_quadro{
     font-size: 28px;
-    margin-left: 30px;
-    margin-bottom: 10px;
+    margin-right: 240px;
 }
 
 .info{
     font-size: 27px;
-    margin-left: 150px;
+    color: white;
+    margin-top: 30px;
+    margin-right: 20px;
+    font-family: 'Montserrat';
 }
 
-.inputo1{
+.inputo{
     width: 450px;
-    height: 27px;
-    margin-left: 13px;
+    height: 30px;
+    margin-left: 20px;
 }
 
-.inputo2{
-    width: 450px;
-    height: 27px;
-    margin-left: 10px;
-
+.margin1 {
+    margin-bottom: -27px;
+    margin-left: 450px;
 }
-
-.inputo3{
-    width: 450px;
-    height: 27px;
-    margin-left: 21px;
-
+.margin2{
+    margin-bottom: 20px;
+    margin-left: 330px;
 }
-
 .botao{
     height: 30px;
     width: 100px;
-    margin-left: 86%;
-    margin-top: 10px;
-    font-size: 20px;
+    font-size: 15px;
+    border-radius: 7px;
+    border-color: blue;
+    color: white;
+    background-color: blue;
 }
 
-
+.grafico{
+    background-color: rgb(247, 244, 244);
+    height: 300px;
+    width: 850px;
+    margin-top: 100px;
+    margin-left: 210px;
+    box-shadow: #313131 10px 7px 20px;
+    border-radius: 10px;
+}
