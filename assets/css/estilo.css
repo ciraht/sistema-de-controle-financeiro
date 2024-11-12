@@ -17,14 +17,6 @@
     text-align: center;
 }
 
-.img_fundo_1{
-    background-image: url(../img/imagem_fundo.png);
-}
-
-.img_fundo_2{
-    background-image: url(../img/imagem_fundo2.png);
-}
-
 .espaco{
     height: 150px;
 }
@@ -70,7 +62,7 @@
 }
 
 .caminho{
-    color: white;
+    color: rgb(247, 244, 244);
     margin-top: 35px;
 }
 
@@ -80,7 +72,7 @@
     margin-left: 20px;
     height: 30px;
     width: 1px;
-    background-color: #ffffff;
+    background-color: rgb(247, 244, 244);
 }
 
 .fundo{
@@ -94,7 +86,7 @@
 }
 
 .saldo_total{
-    background-color: white;
+    background-color: rgb(247, 244, 244);
     height: 200px;
     width: 850px;
     margin-left: 210px;
@@ -110,7 +102,7 @@
 }
 
 .quadro_receitas{
-    background-color: white;
+    background-color: rgb(247, 244, 244);
     height: 600px;
     width: 410px;
     margin-left: 210px;
@@ -118,7 +110,7 @@
 }
 
 .quadro_despesas{
-    background-color: white;
+    background-color: rgb(247, 244, 244);
     height: 600px;
     width: 410px;
     margin-left: 30px;
