@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas</title>
+    <title>Despesas</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        /* Inicialmente ocultamos o histórico */
+        /* Classe para exibir o histórico */
+        #historico {
+        display: none; /* Inicialmente oculto */
+        }
+
+
+    </style>
 </head>
-<body class="fundo img_fundo_1">
+<body>
     <header class="cabecalho d-flex">
         <div>
             <img class="logo" src="assets/img/logo.png">
@@ -29,44 +38,77 @@
 
     <div class="espaco"></div>
 
-    <section class="">
+    <section class="between">
+        <div class="space"></div>
 
-        <div class="adicionar">
-            <div class="mini-espaco"></div>
-            <p class="texto_quadro">ADICIONE UMA RECEITA</p>
-            <div class="mini-espaco"></div>
-            <form>
-                <label class="info">
-                    Valor: 
-                </label>
-                <input type="number" class="inputo1" placeholder="  10.00"> <br>
+        <form class="d-flex">
+            <div class="azul">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <label class="info">Valor: </label>
+                <label class="info"> Fonte: </label>
+                <label class="info"> Data:</label>
+            </div>
+            <div class="adicionar">
+                <div class="mini-espaco"></div>
+                <p class="texto_quadro">ADICIONE SUA RECEITA</p>
+                <div class="mini-espaco"></div>
+                
+                <input type="number" class="inputo" placeholder="  10.99"> <br>
                 <div class="mini-espaco"></div>
 
-                <label class="info">
-                    Fonte: 
-                </label>
-                <input type="text" class="inputo2" placeholder="  Roubei a véia da esquina"> <br>
+                <input type="text" class="inputo" placeholder="  Venda de droga"> <br>
                 <div class="mini-espaco"></div>
-
-                <label class="info">
-                    Data: 
-                </label>
-                <input type="date" class="inputo3"> <br>
+    
+                <input type="date" class="inputo"><br>
                 <div class="mini-espaco"></div>
-
-                <button type="button" class="botao">Adicionar</button>
-            </form>
-        </div>
+    
+                <button type="button" class="botao margin1">Adicionar</button>
+                <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
+                
+            </div>
+        </form>
     </section>
 
-    <section >
-        <div class="grafico">
-            <p>HISTORICO</p>
+    <section>
+        <div class="espaco"></div>
+        <div id="historico">
+            <div class="azul_grafico">
+                <div class="d-flex espaco_esquerda">
+                    <p class="info2">Dia</p>
+                    <div class="divisao2"></div>
+                    <p class="info2">Valor</p>
+                    <div class="divisao2"></div>
+                    <p class="info2">Fonte</p>
+                </div>
+            </div>
+            <div class="grafico">
+                <div class="dado d-flex">
+                    <div class="subquadro1 centraliza">
+                        <p>11-11-2024</p>
+                    </div>
+                    <div class="subquadro2 centraliza">
+                        <p>200.00</p>
+                    </div>
+                    <div class="subquadro1 centraliza">
+                        <p>tigrinho</p>
+                    </div>
+                    <div class="subquadro2 centraliza">
+                        <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
+                        <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
     </section>
 
     <footer class="rodape">
 
     </footer>
+
+    <!-- Importando o arquivo JavaScript -->
+    <script src="assets/js/codigo.js"></script>
 </body>
 </html>

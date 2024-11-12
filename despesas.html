@@ -10,9 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
         /* Inicialmente ocultamos o histórico */
-        .grafico {
-            display: none;
+        /* Classe para exibir o histórico */
+        #historico {
+        display: none; /* Inicialmente oculto */
         }
+
+
     </style>
 </head>
 <body>
@@ -48,7 +51,7 @@
             </div>
             <div class="adicionar">
                 <div class="mini-espaco"></div>
-                <p class="texto_quadro">ADICIONE UMA DESPESA</p>
+                <p class="texto_quadro">ADICIONE SUA DESPESA</p>
                 <div class="mini-espaco"></div>
                 
                 <input type="number" class="inputo" placeholder="  9999.99"> <br>
@@ -65,11 +68,40 @@
                 
             </div>
         </form>
-        <div class="space"></div>
     </section>
 
-    <section id="historico" class="grafico">
-        <p>HISTÓRICO</p>
+    <section>
+        <div class="espaco"></div>
+        <div id="historico">
+            <div class="azul_grafico">
+                <div class="d-flex espaco_esquerda">
+                    <p class="info2">Dia</p>
+                    <div class="divisao2"></div>
+                    <p class="info2">Valor</p>
+                    <div class="divisao2"></div>
+                    <p class="info2">Fonte</p>
+                </div>
+            </div>
+            <div class="grafico">
+                <div class="dado d-flex">
+                    <div class="subquadro1 centraliza">
+                        <p>11-11-2024</p>
+                    </div>
+                    <div class="subquadro2 centraliza">
+                        <p>200.00</p>
+                    </div>
+                    <div class="subquadro1 centraliza">
+                        <p>tigrinho</p>
+                    </div>
+                    <div class="subquadro2 centraliza">
+                        <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
+                        <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
     </section>
 
     <footer class="rodape">
