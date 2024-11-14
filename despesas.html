@@ -33,7 +33,6 @@
     <div class="espaco"></div>
 
     <section class="position-ab" id="c-to-l">
-
         <form class="d-flex">
             <div class="azul" id="tabelaazul">
                 <div class="mini-espaco"></div>
@@ -78,19 +77,20 @@
             <div class="grafico" id="baixo_branco">
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
-                        <p>11-11-2024</p>
+                        <p>{{ despesa[3] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <p>200.00</p>
+                        <p>{{ despesa[2] }}</p>
                     </div>
                     <div class="subquadro1 centraliza">
-                        <p>tigrinho</p>
+                        <p>{{ despesa[1] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
                         <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                         <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                     </div>
                 </div>
+                {% endfor %}
                 
             </div>
 

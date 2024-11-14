@@ -78,19 +78,20 @@
             <div class="grafico" id="baixo_branco">
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
-                        <p>11-11-2024</p>
+                        <p>{{ receita[3] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <p>200.00</p>
+                        <p>{{ receita[2] }}</p>
                     </div>
                     <div class="subquadro1 centraliza">
-                        <p>tigrinho</p>
+                        <p>{{ receita[1] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
                         <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                         <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                     </div>
                 </div>
+                {% endfor %}
                 
             </div>
 
