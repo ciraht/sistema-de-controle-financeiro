@@ -196,6 +196,22 @@
     font-size: 150px;
 }
 
+.fundo5{
+    background-image: url(../img/fundo5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.fundo6{
+    background-image: url(../img/fundo6.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
+
 
 /* pagina inicial / body / dicas*/
 
@@ -397,10 +413,6 @@
     height: 50px;
     width: 212.5px;
 }
-
-
-
-
 .rodape{
     margin-top: 30px;
     background-color: rgba(0, 0, 0, 0.683);
@@ -410,12 +422,66 @@
 
 
 /* pagina login */
+
+.aviso{
+    font-size: 20px;
+    background-color: #ff7272;
+    color:#ffffff;
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.pessoa-fundo{
+    height: 593px;
+    margin-left: -10%;
+
+}
+
 .quadro_login{
-    background-color: white;
+    background-color: rgb(247, 244, 244);
     height: 500px;
-    width: 850px;
-    /* margin-left: 210px; */
-    box-shadow: #313131 7px 7px 7px;
+    width: 400px;
+    box-shadow: #313131 10px 7px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    margin-left:  -6%;
+}
+
+.quadro_login input{
+    height: 30px;
+    width: 320px;
+    border-radius: 5px;
+
+    margin-left: 7%;
+    margin-bottom: 30px;
+}
+
+.quadro_login button{
+    height: 40px;
+    width: 250px;
+
+    background-color: blue;
+    border-color: blue;
+    color: white;
+    font-size: 30px;
+
+    border-radius: 10px;
+}
+
+.pedido{
+    font-size: 25px;
+    margin-left: 7%;
+}
+
+.pedido2{
+    font-size: 20px;
+    margin-left: 7%;
+}
+
+.titulozin{
+    font-size: 30px;
 }
 
 
@@ -570,4 +636,8 @@
 .lixeira{
     height: 20px;
     width: 20px;
+}
+
+.column {
+    flex-direction: column;
 }
