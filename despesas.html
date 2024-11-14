@@ -41,32 +41,32 @@
     <section class="between">
         <div class="space"></div>
 
-        <form class="d-flex">
+        <form class="d-flex" action="{{ url_for('editar_despesa', id=despesa[0]) }}" method="post">
             <div class="azul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
-                <label class="info">Valor: </label>
-                <label class="info"> Fonte: </label>
-                <label class="info"> Data:</label>
+                <label class="info" for="valor_despesa">Valor: </label>
+                <label class="info" for="motivo_despesa"> Fonte: </label>
+                <label class="info" for="data_despesa"> Data:</label>
             </div>
-            <div class="adicionar">
-                <div class="mini-espaco"></div>
-                <p class="texto_quadro">ADICIONE SUA DESPESA</p>
-                <div class="mini-espaco"></div>
-                
-                <input type="number" class="inputo" placeholder="  9999.99"> <br>
-                <div class="mini-espaco"></div>
-
-                <input type="text" class="inputo" placeholder="  Compra de droga"> <br>
-                <div class="mini-espaco"></div>
+                <div class="adicionar">
+                    <div class="mini-espaco"></div>
+                    <p class="texto_quadro">ADICIONE SUA DESPESA</p>
+                    <div class="mini-espaco"></div>
+                    
+                    <input type="number" class="inputo1" placeholder="  9999.99" id="valor_despesa" name="valor_despesa" value="{{ despesa[2] }}" required><br>
+                    <div class="mini-espaco"></div>
     
-                <input type="date" class="inputo"><br>
-                <div class="mini-espaco"></div>
-    
-                <button type="button" class="botao margin1">Adicionar</button>
-                <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
-                
-            </div>
+                    <input type="text" class="inputo2" placeholder="  Compra de droga" id="motivo_despesa" name="motivo_despesa" value="{{ despesa[1] }}" required> <br>
+                    <div class="mini-espaco"></div>
+        
+                    <input type="date" class="inputo3" id="data_despesa" name="data_despesa" value="{{ despesa[3] }}" required> <br>
+                    <div class="mini-espaco"></div>
+        
+                    <button type="submit" class="botao margin1">Adicionar</button>
+                    <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
+                    
+                </div>
         </form>
     </section>
 
@@ -83,21 +83,23 @@
                 </div>
             </div>
             <div class="grafico">
+                {% for despesa in despesas %}
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
-                        <p>11-11-2024</p>
+                        <p>{{ despesa[3] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <p>200.00</p>
+                        <p>{{ despesa[2] }}</p>
                     </div>
                     <div class="subquadro1 centraliza">
-                        <p>tigrinho</p>
+                        <p>{{ despesa[1] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
                         <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                         <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
                     </div>
                 </div>
+                {% endfor %}
                 
             </div>
 
