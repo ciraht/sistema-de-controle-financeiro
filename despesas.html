@@ -8,15 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <style>
-        /* Inicialmente ocultamos o histórico */
-        /* Classe para exibir o histórico */
-        #historico {
-        display: none; /* Inicialmente oculto */
-        }
-
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="cabecalho d-flex">
@@ -38,32 +32,31 @@
 
     <div class="espaco"></div>
 
-    <section class="between">
-        <div class="space"></div>
+    <section class="position-ab" id="c-to-l">
 
         <form class="d-flex">
-            <div class="azul">
+            <div class="azul" id="tabelaazul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <label class="info">Valor: </label>
-                <label class="info"> Fonte: </label>
-                <label class="info"> Data:</label>
+                <label class="info">Fonte: </label>
+                <label class="info">Data: </label>
             </div>
-            <div class="adicionar">
+            <div class="adicionar" id="tabela">
                 <div class="mini-espaco"></div>
-                <p class="texto_quadro">ADICIONE SUA DESPESA</p>
+                <p class="texto_quadro letrinha" id="texto-quadro">ADICIONE SUA DESPESA</p>
                 <div class="mini-espaco"></div>
                 
-                <input type="number" class="inputo" placeholder="  9999.99"> <br>
+                <input type="number" class="inputo"  id="input" placeholder="  10.99"> <br>
                 <div class="mini-espaco"></div>
 
-                <input type="text" class="inputo" placeholder="  Compra de droga"> <br>
+                <input type="text" class="inputo"  id="input2" placeholder="  Venda de droga"> <br>
                 <div class="mini-espaco"></div>
     
-                <input type="date" class="inputo"><br>
+                <input type="date" class="inputo"  id="input3"><br>
                 <div class="mini-espaco"></div>
     
-                <button type="button" class="botao margin1">Adicionar</button>
+                <button type="button" class="botao margin1" id="adicionar">Adicionar</button>
                 <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
                 
             </div>
@@ -71,18 +64,18 @@
     </section>
 
     <section>
-        <div class="espaco"></div>
         <div id="historico">
-            <div class="azul_grafico">
+            <div class="azul_grafico" id="topo_azul">
                 <div class="d-flex espaco_esquerda">
                     <p class="info2">Dia</p>
                     <div class="divisao2"></div>
                     <p class="info2">Valor</p>
                     <div class="divisao2"></div>
                     <p class="info2">Fonte</p>
+                    <button class="xis" id="exit" onclick="fecharHistorico()">X</button>
                 </div>
             </div>
-            <div class="grafico">
+            <div class="grafico" id="baixo_branco">
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
                         <p>11-11-2024</p>
@@ -102,11 +95,7 @@
             </div>
 
         </div>
-    </section>
-
-    <footer class="rodape">
-
-    </footer>
+    </section> 
 
     <!-- Importando o arquivo JavaScript -->
     <script src="assets/js/codigo.js"></script>
