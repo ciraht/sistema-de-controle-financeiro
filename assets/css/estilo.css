@@ -323,6 +323,14 @@
     height: 400px;
 }
 
+.fundo7{
+    background-image: url(../img/fundo7.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
+
 
 /* pagina inicial / body / dicas*/
 

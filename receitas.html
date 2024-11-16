@@ -14,23 +14,101 @@
 </head>
 <body>
     <header class="cabecalho d-flex">
-        <div>
+        <div class="d-evelin">
             <img class="logo" src="assets/img/logo.png">
+            <div>
+                <p class="letrao texto-logo">Finança</p>
+                <p class="letrao texto-logo">Facil</p>
+            </div>
         </div>
         <div class="d-flex caminhos">
-            <a href="index.html"><p class="caminho">Home</p></a>
-            <div class="divisao"></div>
-            <a href="receitas.html"><p class="caminho">Receitas</p></a>
-            <div class="divisao"></div>
-            <a href="despesas.html"><p class="caminho">Despesas</p></a>
+            <a href="index.html"><div class="caminho-verde">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <p class="texto-cabecalho letrao">Home</p>
+            </div></a>
+            
+            <a href="receitas.html"><div class="caminho-amarelo">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <p class="texto-cabecalho letrao">Receitas</p>
+            </div></a>
+            
+            <a href="despesas.html"><div class="caminho-vermelho">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <p class="texto-cabecalho letrao">Despesas</p>
+            </div></a>
         </div>
 
         <div>
-            <img class="usuario" src="assets/img/usuario.png">
+            <img class="usuario" id="toggleUser" src="assets/img/usuario.png">
         </div>
     </header>
 
+    <div class="escuro oculto">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+        <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
+            <div class="d-flex">
+                <div class="espaco"></div>
+                <p class="letrao">Nome do usuario aqui</p>
+                <img class="usuario" src="assets/img/usuario.png">
+            </div>
+            <div class="informacoes">
+                <div>
+                    <p class="letrao">Nome</p>
+                    <p class="letrinha">{{ user[1] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Data de Nascimento</p>
+                    <p class="letrinha">{{ user[3] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Email</p>
+                    <p class="letrinha">{{ user[4] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">CPF</p>
+                    <p class="letrinha">{{ user[2] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Senha</p>
+                    <p class="letrinha">{{ user[5] }}</p>
+                </div>
+            </div>
+            <div class="d-evelin">
+                <button class="botton letrao"><a href="editar_usuario.html">Editar</a></button>
+                <button class="botton letrao">Sair da conta</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seleciona os elementos
+        const userIcon = document.getElementById("toggleUser");
+        const escuro = document.querySelector(".escuro");
+        const mais = document.querySelector(".mais");
+
+        // Mostra ou oculta as divs ao clicar no ícone do usuário
+        userIcon.addEventListener("click", function () {
+            escuro.classList.toggle("oculto");
+            mais.classList.toggle("oculto");
+        });
+
+        // Esconde as divs ao clicar na div "escuro"
+        escuro.addEventListener("click", function () {
+            if (!escuro.classList.contains("oculto")) {
+                escuro.classList.add("oculto");
+                mais.classList.add("oculto");
+            }
+        });
+    </script>
+
     <div class="espaco"></div>
+    <div class="mini-espaco"></div>
 
     <section class="position-ab" id="c-to-l">
 
