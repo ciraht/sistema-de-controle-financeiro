@@ -7,37 +7,103 @@
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="flash margin_bottom">
-                {% for category, message in messages %}
-                    <div class="{{ category }}">{{ message }}</div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
     <header class="cabecalho d-flex">
-        <div>
+        <div class="d-evelin">
             <img class="logo" src="assets/img/logo.png">
+            <div>
+                <p class="letrao texto-logo">Finança</p>
+                <p class="letrao texto-logo">Facil</p>
+            </div>
         </div>
         <div class="d-flex caminhos">
-            <a href="index.html"><p class="caminho">Home</p></a>
-            <div class="divisao"></div>
-            <a href="receitas.html"><p class="caminho">Receitas</p></a>
-            <div class="divisao"></div>
-            <a href="despesas.html"><p class="caminho">Despesas</p></a>
+            <div class="caminho-verde">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <a href="index.html"><p class="texto-cabecalho letrao">Home</p></a>
+            </div>
+            
+            <div class="caminho-amarelo">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <a href="receitas.html"><p class="texto-cabecalho letrao">Receitas</p></a>
+            </div>
+            
+            <div class="caminho-vermelho">
+                <div class="mini-espaco"></div>
+                <div class="mini-espaco"></div>
+                <a href="despesas.html"><p class="texto-cabecalho letrao">Despesas</p></a>
+            </div>
         </div>
 
         <div>
-            <img class="usuario" src="assets/img/usuario.png">
+            <img class="usuario" id="toggleUser" src="assets/img/usuario.png">
         </div>
     </header>
+
+    <div class="escuro oculto">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+        <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
+            <div class="d-flex">
+                <div class="espaco"></div>
+                <p class="letrao">Nome do usuario aqui</p>
+                <img class="usuario" src="assets/img/usuario.png">
+            </div>
+            <div class="informacoes">
+                <div>
+                    <p class="letrao">Nome</p>
+                    <p class="letrinha">{{ user[1] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Data de Nascimento</p>
+                    <p class="letrinha">{{ user[3] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Email</p>
+                    <p class="letrinha">{{ user[4] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">CPF</p>
+                    <p class="letrinha">{{ user[2] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Senha</p>
+                    <p class="letrinha">{{ user[5] }}</p>
+                </div>
+            </div>
+            <div class="d-evelin">
+                <button class="botton letrao"><a href="/editar_usuario">Editar</a></button>
+                <button class="botton letrao">Sair da conta</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seleciona os elementos
+        const userIcon = document.getElementById("toggleUser");
+        const escuro = document.querySelector(".escuro");
+        const mais = document.querySelector(".mais");
+
+        // Mostra ou oculta as divs ao clicar no ícone do usuário
+        userIcon.addEventListener("click", function () {
+            escuro.classList.toggle("oculto");
+            mais.classList.toggle("oculto");
+        });
+
+        // Esconde as divs ao clicar na div "escuro"
+        escuro.addEventListener("click", function () {
+            if (!escuro.classList.contains("oculto")) {
+                escuro.classList.add("oculto");
+                mais.classList.add("oculto");
+            }
+        });
+    </script>
+    
 
     <section class="fundo1">
 

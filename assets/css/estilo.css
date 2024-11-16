@@ -43,6 +43,11 @@
     position: absolute;
     left: 215px;
 }
+
+.oculto {
+    display: none;
+}
+
 /* fontes */
 
 .letrinha{
@@ -56,7 +61,7 @@
 
 /* Pagina inicial / cabeçalho*/
 .cabecalho{
-    background-color: rgba(0, 0, 0, 0.683);
+    background-color: rgba(0, 0, 0, 0.801);
     height: 90px;
     width: 100%;
 
@@ -64,48 +69,150 @@
 }
 
 .logo{
-    width: 100px;
     height: 90px;
-
     margin-left: 20px;
 }
 
-.usuario{
-    height: 90px;
-    width: 75px;
-
-    margin-left: 50px;
+.texto-logo{
+    font-size: 38px;
+    margin-bottom: -20px;
+    color: white;
 }
 
 .caminhos{
     margin-left: 750px;
 }
 
-.caminho{
+.texto-cabecalho{
     color: rgb(247, 244, 244);
     margin-top: 35px;
+    text-align: center;
+    font-size: 30px;
 }
 
-.divisao{
+.caminho-verde{
+    background-color: rgba(0, 0, 0, 0.218);
+    height: 150px;
+    width: 100px;
+
+    margin-top: -60px;
+}
+
+.caminho-verde:hover{
+    border-radius: 15px;
+    background-color: #bfcc3a;
+    margin-top: -20px;
+
+}
+
+.caminho-amarelo{
+    background-color: rgba(0, 0, 0, 0.218);
+    height: 150px;
+    width: 130px;
+
+    margin-top: -60px;
+}
+
+.caminho-amarelo:hover{
+    border-radius: 15px;
+    background-color: #fbc12d;
+    margin-top: -20px;
+
+}
+
+.caminho-vermelho{
+    background-color: rgba(0, 0, 0, 0.218);
+    height: 150px;
+    width: 140px;
+
+    margin-top: -60px;
+}
+
+.caminho-vermelho:hover{
+    border-radius: 15px;
+    background-color: #df2828;
+    margin-top: -20px;
+
+}
+
+
+.usuario{
+    height: 90px;
+    margin-left: 50px;
+}
+
+.escuro{
+    background-color: rgba(0, 0, 0, 0.61);
+    height: 900px;
+    width: 100%;
+
+    position: fixed;
+}
+
+.mais{
+    height: 800px;
+    width: 400px;
+
+    background-color: #f4f4f4;
+    right: 300px;
+
+    position: relative;
+    margin-bottom: -900px;
+    margin-left: 93.5%;
+    
+}
+
+.mais .usuario{
+    height: 120px;
+    margin-left: 50px;
+    
+}
+
+.mais p{
     margin-top: 30px;
-    margin-right: 20px;
-    margin-left: 20px;
-    height: 30px;
-    width: 1px;
-    background-color: rgb(247, 244, 244);
+    font-size: 25px;
 }
 
+.mais .espaco{
+    width: 20px;
+}
+
+.informacoes p{
+    margin-top: 0px
+}
+
+.informacoes .letrao{
+    font-size: 28px;
+    margin-left: 30px;
+}
+
+.informacoes .letrinha{
+    font-size: 23px;
+    margin-left: 30px;
+}
+
+.botton{
+    height: 40px;
+    width: 120px;
+
+    background-color: rgb(126, 126, 126);
+    border-color: rgb(126, 126, 126);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    margin-top: 30px;
+    font-size: 20px;
+}
 
 /* pagina inicial / body*/
 /* pagina inicial / body / saldo-total*/
 
 .saldo_total{
-    height: 280px;
-    width: 920px;
+    height: 20%;
+    width: 60%;
     box-shadow: #313131 15px 7px 20px;
     border-radius: 10px;
-    margin-left: -28%;
-    margin-top: 270px;
+    margin-left: -18%;
+    margin-top: 18.8%;
 }
 
 .pessoa1{
@@ -427,35 +534,29 @@
 
 /* pagina login */
 
-.aviso{
-    font-size: 20px;
-    background-color: #ff7272;
-    color:#ffffff;
-    height: 40px;
-    width: 300px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
 .pessoa-fundo{
-    height: 593px;
+    height: 182.3%;
     margin-left: -10%;
 
 }
 
 .quadro_login{
     background-color: rgb(247, 244, 244);
-    height: 500px;
-    width: 400px;
+    height: 80%;
+    width: 25%;
     box-shadow: #313131 10px 7px 20px;
-    margin-top: 30px;
+    margin-top: 5%;
     border-radius: 15px;
-    margin-left:  -6%;
+    margin-left: -6%;
+}
+
+.logo2{
+    height: 120px;
 }
 
 .quadro_login input{
+    width: 83%;
     height: 30px;
-    width: 320px;
     border-radius: 5px;
 
     margin-left: 7%;
@@ -463,19 +564,20 @@
 }
 
 .quadro_login button{
-    height: 40px;
-    width: 250px;
+    height: 40%;
+    width: 60%;
 
-    background-color: blue;
-    border-color: blue;
+    background-color: rgb(126, 126, 126);
+    border-color: rgb(126, 126, 126);
     color: white;
-    font-size: 30px;
+    font-size: 200%;
 
     border-radius: 10px;
+    margin-bottom: 5%;
 }
 
 .pedido{
-    font-size: 25px;
+    font-size: 150%;
     margin-left: 7%;
 }
 
@@ -485,7 +587,18 @@
 }
 
 .titulozin{
-    font-size: 30px;
+    font-size: 250%;
+}
+
+.aviso{
+    font-size: 120%;
+    background-color: #ff7272;
+    color:#ffffff;
+
+    height: 50%;
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 5%;
 }
 
 

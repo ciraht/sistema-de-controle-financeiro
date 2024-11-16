@@ -1,3 +1,5 @@
+//não sei o que é isso, mas é inutil
+
 function mostrarHistorico() {
     const exit = document.getElementById("exit")
     exit.style.height = "35px"
@@ -55,6 +57,8 @@ function fecharHistorico(){
     baixo.style.height = "0px"
 }
 
+//mudar imagens e cores da tela de inicio
+
 const pessoas = [
     { class: 'pessoa1', image: 'assets/img/pessoa1.png', bgColor: 'pessoa1_cor', fundo: 'assets/img/fundo1.png' },
     { class: 'pessoa2', image: 'assets/img/pessoa2.png', bgColor: 'pessoa2_cor', fundo: 'assets/img/fundo2.png' },
@@ -95,4 +99,28 @@ function aplicarEstiloAleatorio() {
 }
 
 window.onload = aplicarEstiloAleatorio;
-    
+
+//mudar pergunta da pagina de cadastro
+
+
+const grupo1 = document.getElementById('grupo1');
+const grupo2 = document.getElementById('grupo2');
+const btnProximo1 = document.getElementById('btnProximo1');
+const btnVoltar = document.getElementById('btnVoltar');
+
+btnProximo1.addEventListener('click', () => {
+    grupo1.style.display = 'none';
+    grupo2.style.display = 'block';
+});
+
+btnVoltar.addEventListener('click', () => {
+    grupo2.style.display = 'none';
+    grupo1.style.display = 'block';
+});
+
+// aparecer as informações do usuario na home
+
+document.getElementById("toggleUser").addEventListener("click", function () {
+    const userInfo = document.querySelector(".escuro.mais");
+    userInfo.classList.toggle("oculto");
+});
