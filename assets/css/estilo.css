@@ -458,12 +458,11 @@
     background-color: white;
     height: 500px;
     width: 850px;
-    /* margin-left: 210px; */
     box-shadow: #313131 7px 7px 7px;
 }
 
 
-/* pagina despesas e receitas */
+/* pagina inicial / despesas e receitas */
 
 .grafico2{
     background-color: rgb(247, 244, 244);
@@ -532,12 +531,100 @@
     height: 50px;
     width: 212.5px;
 }
-.rodape{
-    margin-top: 30px;
-    background-color: rgba(0, 0, 0, 0.683);
-    height: 60px;
+
+
+/* pagina dicas */
+
+.fundo-liso1{
+    width: 100%;
+    height: 600px;
+    background-color: pink;
 }
 
+.pensando1{
+    height: 800px;
+    bottom: 200px;
+    left: 150px;
+}
+
+.titulo1{
+    color: rgb(254, 147, 165);
+    font-size: 85px;
+    margin-right: 80px;
+    margin-left: -100px;
+    margin-top: 130px;
+}
+
+.fundo-liso2{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(141, 167, 228);
+}
+
+.pensando2{
+    height: 600px;
+    bottom: 0px;
+    left: 50px;
+}
+
+.titulo2{
+    color: rgb(85, 122, 208);
+    font-size: 85px;
+    margin-right: 80px;
+    margin-left: -100px;
+    margin-top: 130px;
+}
+
+.fundo-liso3{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(186, 141, 228);
+}
+
+.pensando3{
+    height: 600px;
+    bottom: 0px;
+    left: 50px;
+}
+
+.titulo3{
+    color: rgb(145, 85, 208);
+    font-size: 75px;
+    margin-right: 50px;
+    margin-left: -100px;
+    margin-top: 130px;
+}
+
+.fundo-liso4{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(228, 190, 141);
+}
+
+.pensando4{
+    height: 600px;
+    bottom: 0px;
+    left: 60px;
+}
+
+.titulo4{
+    color: rgb(208, 155, 85);
+    font-size: 85px;
+    margin-right: 80px;
+    margin-left: -100px;
+    margin-top: 130px;
+}
+
+.texto-grande .titulo{
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+.texto-grande .texto{
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 80px;
+}
 
 
 /* pagina login */
@@ -771,4 +858,35 @@
 
 .column {
     flex-direction: column;
+}
+
+/* pagina de apresentação do site */
+
+.imagem-fundo{
+    background-image: url(../img/fundo9.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 730px;
+}
+
+.agrupamento .letrao{
+    font-size: 100px;
+    color: #ffffff;
+}
+
+.agrupamento{
+    margin-left: 900px;
+}
+
+.texto-mao{
+    font-size: 30px;
+    margin-left: 70px;
+    margin-top: 200px;
+    color: rgb(50, 146, 255);
+}
+
+.mao{
+    margin-top: 80px;
+    height: 500px;
 }
