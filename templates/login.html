@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +12,11 @@
 </head>
 <body class="fundo5">
     <section class="d-flex pessoa-fundo">
-        <img src="assets/img/pessoa4.png">
+        <img src="../static/img/pessoa4.png">
         <div class="quadro_login">
             <form action="{{ url_for('logar') }}" method="post">
                 <div class="centraliza">
-                    <img class="logo2" src="assets/img/logo.png">
+                    <img class="logo2" src="../static/img/logo.png">
                     <p class="titulozin letrao">Entre na sua conta</p>
                     <div class="mini-espaco"></div>
                 </div>
@@ -29,9 +29,15 @@
     
                 <div class="mini-espaco"></div>
                 <div class="centraliza d-flex column ">
-                    <p class="aviso letrinha">erro</p>
-                    <button type="submit letrao">Entrar</button><br>
-                    <a href="cadastro.html" class="letrinha">Não tem uma conta? Cadastre-se</a>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <p class="letrinha aviso">{{ messages[-1][1] }}</p>
+                        {% else %}
+                            <div class="espacinho"></div>
+                        {% endif %}
+                    {% endwith %}
+                    <button type="submit" class="letrao espacinho">Entrar</button><br>
+                    <a href="/cadastro" class="letrinha">Não tem uma conta? Cadastre-se</a>
                 </div>
             </form>
         </div>

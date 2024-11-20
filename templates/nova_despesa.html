@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despesas</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -15,26 +15,26 @@
 <body>
     <header class="cabecalho d-flex">
         <div class="d-evelin">
-            <img class="logo" src="assets/img/logo.png">
+            <img class="logo" src="../static/img/logo.png">
             <div>
                 <p class="letrao texto-logo">Finança</p>
                 <p class="letrao texto-logo">Facil</p>
             </div>
         </div>
         <div class="d-flex caminhos">
-            <a href="index.html"><div class="caminho-verde">
+            <a href="/home"><div class="caminho-verde">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Home</p>
             </div></a>
             
-            <a href="receitas.html"><div class="caminho-amarelo">
+            <a href="/nova_receita"><div class="caminho-amarelo">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Receitas</p>
             </div></a>
             
-            <a href="despesas.html"><div class="caminho-vermelho">
+            <a href="/nova_despesa"><div class="caminho-vermelho">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Despesas</p>
@@ -42,7 +42,7 @@
         </div>
 
         <div>
-            <img class="usuario" id="toggleUser" src="assets/img/usuario.png">
+            <img class="usuario" id="toggleUser" src="../static/img/usuario.png">
         </div>
     </header>
 
@@ -50,38 +50,31 @@
         <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
             <div class="d-flex">
                 <div class="espaco"></div>
-                <p class="letrao">Nome do usuario aqui</p>
-                <img class="usuario" src="assets/img/usuario.png">
+                {% for perfil in perfis %}
+                <p class="letrao">{{ perfil[1] }}</p>
+                <img class="usuario lado" src="../static/img/usuario.png">
             </div>
             <div class="informacoes">
-                <div>
-                    <p class="letrao">Nome</p>
-                    <p class="letrinha">{{ user[1] }}</p>
-                </div><br>
 
                 <div>
                     <p class="letrao">Data de Nascimento</p>
-                    <p class="letrinha">{{ user[3] }}</p>
+                    <p class="letrinha">{{ perfil[3] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">Email</p>
-                    <p class="letrinha">{{ user[4] }}</p>
+                    <p class="letrinha">{{ perfil[4] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">CPF</p>
-                    <p class="letrinha">{{ user[2] }}</p>
-                </div><br>
-
-                <div>
-                    <p class="letrao">Senha</p>
-                    <p class="letrinha">{{ user[5] }}</p>
+                    <p class="letrinha">{{ perfil[2] }}</p>
                 </div>
+                {% endfor %}
             </div>
             <div class="d-evelin">
-                <button class="botton letrao"><a href="editar_usuario.html">Editar</a></button>
-                <button class="botton letrao">Sair da conta</button>
+                <a href="/editar_usuario"><button class="botton letrao">Editar</button></a>
+                <a href="/sair"><button class="botton letrao">Sair da conta</button></a>
             </div>
         </div>
     </div>
@@ -111,7 +104,7 @@
     <div class="mini-espaco"></div>
 
     <section class="position-ab" id="c-to-l">
-        <form class="d-flex">
+        <form class="d-flex" action="{{ url_for('criar_despesa') }}" method="post">
             <div class="azul" id="tabelaazul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
@@ -121,19 +114,19 @@
             </div>
             <div class="adicionar" id="tabela">
                 <div class="mini-espaco"></div>
-                <p class="texto_quadro letrao" id="texto-quadro">ADICIONE SUA DESPESA</p>
+                <p class="texto_quadro letrinha" id="texto-quadro">ADICIONE SUA DESPESA</p>
                 <div class="mini-espaco"></div>
                 
-                <input type="number" class="inputo"  id="input" placeholder="  00.00"> <br>
+                <input type="number" class="inputo"  id="input" name="valor_despesa" placeholder="  10.99"> <br>
                 <div class="mini-espaco"></div>
 
-                <input type="text" class="inputo"  id="input2" placeholder="  Insira a origem da despesa"> <br>
+                <input type="text" class="inputo"  id="input2" name="motivo_despesa" placeholder="  Venda de droga"> <br>
                 <div class="mini-espaco"></div>
     
-                <input type="date" class="inputo"  id="input3"><br>
+                <input type="date" class="inputo"  id="input3" name="data_despesa" ><br>
                 <div class="mini-espaco"></div>
     
-                <button type="button" class="botao margin1" id="adicionar">Adicionar</button>
+                <button type="submit" class="botao margin1" id="adicionar">Adicionar</button>
                 <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
                 
             </div>
@@ -153,6 +146,7 @@
                 </div>
             </div>
             <div class="grafico" id="baixo_branco">
+                {% for despesa in despesas %}
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
                         <p>{{ despesa[3] }}</p>
@@ -164,8 +158,8 @@
                         <p>{{ despesa[1] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
-                        <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
+                        <button class="editar"><img class="lapis" src="../static/img/editar.png"></button>
+                        <button class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
                     </div>
                 </div>
                 {% endfor %}
@@ -175,7 +169,7 @@
         </div>
     </section> 
 
-    <!-- Importando o arquivo JavaScript -->
-    <script src="assets/js/codigo.js"></script>
+
+    <script src="../static/js/codigo.js"></script>
 </body>
 </html>
