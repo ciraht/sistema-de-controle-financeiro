@@ -1,62 +1,37 @@
-//não sei o que é isso, mas é inutil
+function ajustarEstilo(elementId, estilos) {
+    const elemento = document.getElementById(elementId);
+    if (elemento) {
+        Object.assign(elemento.style, estilos);
+    }
+}
 
 function mostrarHistorico() {
-    const exit = document.getElementById("exit")
-    exit.style.height = "35px"
-    exit.style.width = "35px"
-    const tabelaazul = document.getElementById("tabelaazul")
-    const tabela = document.getElementById("tabela")
-    tabelaazul.style.width = "130px"
-    tabelaazul.style.marginLeft = "10px"
-    tabela.style.width = "180px"
-    const input = document.getElementById('input')
-    const input2 = document.getElementById('input2')
-    const input3 = document.getElementById('input3')
-    input.style.width = "150px"
-    input2.style.width = "150px"
-    input3.style.width = "150px"
-    const textoquadro = document.getElementById('texto-quadro')
-    textoquadro.style.marginLeft = "10px"
-    const adicionar = document.getElementById('adicionar')
-    adicionar.style.marginLeft = "10px"
-    const ctol = document.getElementById('c-to-l')
-    ctol.style.left = "10px"
-    const topo = document.getElementById('topo_azul')
-    const baixo = document.getElementById('baixo_branco')
-    topo.style.width = "800px"
-    topo.style.height = "100px"
-    baixo.style.width = "800px"
-    baixo.style.height = "300px"
-}
-function fecharHistorico(){
-    const exit = document.getElementById("exit")
-    exit.style.height = "0px"
-    exit.style.width = "0px"
-    const tabelaazul = document.getElementById("tabelaazul")
-    const tabela = document.getElementById("tabela")
-    tabelaazul.style.width = "250px"
-    tabelaazul.style.marginLeft = "0px"
-    tabela.style.width = "600px"
-    const input = document.getElementById('input')
-    const input2 = document.getElementById('input2')
-    const input3 = document.getElementById('input3')
-    input.style.width = "450px"
-    input2.style.width = "450px"
-    input3.style.width = "450px"
-    const textoquadro = document.getElementById('texto-quadro')
-    textoquadro.style.marginLeft = "0px"
-    const adicionar = document.getElementById('adicionar')
-    adicionar.style.marginLeft = "450px"
-    const ctol = document.getElementById('c-to-l')
-    ctol.style.left = "215px"
-    const topo = document.getElementById('topo_azul')
-    const baixo = document.getElementById('baixo_branco')
-    topo.style.width = "0px"
-    topo.style.height = "0px"
-    baixo.style.width = "0px"
-    baixo.style.height = "0px"
+    ajustarEstilo("exit", { height: "35px", width: "35px" });
+    ajustarEstilo("tabelaazul", { width: "130px", marginLeft: "10px" });
+    ajustarEstilo("tabela", { width: "180px" });
+    ajustarEstilo("input", { width: "150px" });
+    ajustarEstilo("input2", { width: "150px" });
+    ajustarEstilo("input3", { width: "150px" });
+    ajustarEstilo("texto-quadro", { marginLeft: "10px" });
+    ajustarEstilo("adicionar", { marginLeft: "10px" });
+    ajustarEstilo("c-to-l", { left: "10px" });
+    ajustarEstilo("topo_azul", { width: "800px", height: "100px" });
+    ajustarEstilo("baixo_branco", { width: "800px", height: "300px" });
 }
 
+function fecharHistorico() {
+    ajustarEstilo("exit", { height: "0px", width: "0px" });
+    ajustarEstilo("tabelaazul", { width: "250px", marginLeft: "0px" });
+    ajustarEstilo("tabela", { width: "600px" });
+    ajustarEstilo("input", { width: "450px" });
+    ajustarEstilo("input2", { width: "450px" });
+    ajustarEstilo("input3", { width: "450px" });
+    ajustarEstilo("texto-quadro", { marginLeft: "0px" });
+    ajustarEstilo("adicionar", { marginLeft: "450px" });
+    ajustarEstilo("c-to-l", { left: "215px" });
+    ajustarEstilo("topo_azul", { width: "0px", height: "0px" });
+    ajustarEstilo("baixo_branco", { width: "0px", height: "0px" });
+}
 //mudar imagens e cores da tela de inicio
 
 const pessoas = [
