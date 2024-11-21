@@ -145,7 +145,7 @@ def home():
     df["Data"] = pd.to_datetime(df["Data"])
 
     import plotly.express as px
-    fig = px.line(
+    fig = px.bar(
         df,
         x="Data",
         y="Valor",
@@ -299,6 +299,8 @@ def criar_receita():
     motivo = request.form['motivo_receita']
     valor = request.form['valor_receita']
     data_receita = request.form['data_receita']
+    if data_receita < "1900-01-01" or data_receita > "2099-12-12":
+        return redirect('/nova_receita')
     id_user = session.get('id_user')
 
     cursor = con.cursor()
@@ -321,6 +323,8 @@ def criar_despesa():
     motivo = request.form['motivo_despesa']
     valor = request.form['valor_despesa']
     data_despesa = request.form['data_despesa']
+    if data_despesa < "1900-01-01" or data_despesa > "2099-12-12":
+        return redirect('/nova_despesa')
     id_user = session.get('id_user')
 
     cursor = con.cursor()

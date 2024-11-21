@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despesas</title>
+    <title>Receitas</title>
     <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,7 +118,7 @@
                 <p class="texto_quadro letrao" id="texto-quadro">ADICIONE SUA RECEITA</p>
                 <div class="mini-espaco"></div>
                 
-                <input type="number" class="inputo"  id="input" name="valor_receita" placeholder="00.00"> <br>
+                <input type="number" step="0.01" class="inputo"  id="input" name="valor_receita" placeholder="00.00"> <br>
                 <div class="mini-espaco"></div>
 
                 <input type="text" class="inputo"  id="input2" name="motivo_receita" placeholder="Insira a origem da receita"> <br>
@@ -146,21 +146,23 @@
                     <button class="xis" id="exit" onclick="fecharHistorico()">X</button>
                 </div>
             </div>
-            <div class="grafico" id="baixo_branco">
+            <div class="grafico3" id="baixo_branco">
                 {% for receita in receitas %}
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
                         <p>{{ receita[3] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <p>{{ receita[2] }}</p>
+                        <p>R$ {{ receita[2] }}</p>
                     </div>
                     <div class="subquadro1 centraliza">
                         <p>{{ receita[1] }}</p>
                     </div>
-                    <div class="subquadro2 centraliza">
-                        <button class="editar"><img class="lapis" src="../static/img/editar.png"></button>
-                        <button class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
+                    <div class="subquadro2 centraliza d-flex">
+                        <a href="{{ url_for('editar_receita', id=receita[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
+                        <form action="{{ url_for('deletar_receita', id=receita[0]) }}" method="post">
+                            <button type="submit" class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
+                        </form>
                     </div>
                 </div>
                 {% endfor %}
@@ -173,5 +175,9 @@
 
     <!-- Importando o arquivo JavaScript -->
     <script src="../static/js/codigo.js"></script>
+    <footer class="rodape">
+        <img class="logo" src="../static/img/logo.png">
+        <p class="letrinha">Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
