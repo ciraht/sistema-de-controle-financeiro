@@ -64,7 +64,7 @@
     background-color: rgba(0, 0, 0, 0.801);
     height: 90px;
     width: 100%;
-
+    z-index: 90;
     position: fixed;
 }
 
@@ -470,6 +470,7 @@
     width: 850px;
     box-shadow: #313131 10px 7px 20px;
     border-radius: 0px 0px 10px 10px;
+    overflow: auto;
 }
 
 .azul_grafico2{
@@ -489,6 +490,10 @@
     font-size: 25px;
     margin-left: 30px;
     margin-top: 8px;
+}
+
+.zindex{
+    z-index: 100;
 }
 
 .ver_des{
@@ -778,7 +783,7 @@
     background-color: #bfcc3a; 
     border: none;
     border-radius: 50%;
-    height: 35px;
+    height: 0px;
     width: 35px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -869,6 +874,7 @@
     box-shadow: #313131 10px 7px 20px;
     margin-left: 35%;
     border-radius: 0px 0px 10px 10px;
+    overflow: auto;
 }
 
 .azul_grafico{
@@ -958,4 +964,8 @@
 .mao{
     margin-top: 80px;
     height: 500px;
+}
+
+.m-top-small {
+    margin-top:17px;
 }

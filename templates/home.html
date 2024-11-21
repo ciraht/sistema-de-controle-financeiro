@@ -42,11 +42,11 @@
             <img class="usuario" id="toggleUser" src="../static/img/usuario.png">
         </div>
     </header>
-
-    <div class="escuro oculto">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+<br><br><br><br>
+    <div class="escuro oculto zindex m-top-small">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
         <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
             <div class="d-flex">
-                <div class="espaco"></div>
+                <div class="espaco "></div>
                 {% for perfil in perfis %}
                 <p class="letrao">{{ perfil[0] }}</p>
                 <img class="usuario lado" src="../static/img/usuario.png">
@@ -195,8 +195,8 @@
                         <p>{{ receita[1] }}</p>
                     </div>
                     <div class="subquadro_re2 centraliza">
-                            <a href="{{ url_for('editar_despesa', id=receita[0]) }}"><button class="ver_des">Editar</button></a>
-                        <form action="{{ url_for('deletar_despesa', id=receita[0]) }}" method="post">
+                            <a href="{{ url_for('editar_receita', id=receita[0]) }}"><button class="ver_des">Editar</button></a>
+                        <form action="{{ url_for('deletar_receita', id=receita[0]) }}" method="post">
                             <button type="submit">Deletar</button>
                         </form>
                     </div>
