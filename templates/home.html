@@ -48,24 +48,24 @@
             <div class="d-flex">
                 <div class="espaco"></div>
                 {% for perfil in perfis %}
-                <p class="letrao">{{ perfil[1] }}</p>
+                <p class="letrao">{{ perfil[0] }}</p>
                 <img class="usuario lado" src="../static/img/usuario.png">
             </div>
             <div class="informacoes">
 
                 <div>
                     <p class="letrao">Data de Nascimento</p>
-                    <p class="letrinha">{{ perfil[3] }}</p>
+                    <p class="letrinha">{{ perfil[2] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">Email</p>
-                    <p class="letrinha">{{ perfil[4] }}</p>
+                    <p class="letrinha">{{ perfil[3] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">CPF</p>
-                    <p class="letrinha">{{ perfil[2] }}</p>
+                    <p class="letrinha">{{ perfil[1] }}</p>
                 </div>
                 {% endfor %}
             </div>

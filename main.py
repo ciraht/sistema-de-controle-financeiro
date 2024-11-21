@@ -135,18 +135,15 @@ def home():
     for despesa in despesas:
         saldo -= despesa[2]
 
-    # Preparando os dados para o gráfico
     import pandas as pd
     receitas_df = pd.DataFrame(grafico_receitas, columns=["Motivo", "Valor", "Data"])
     receitas_df["Tipo"] = "Receita"
     despesas_df = pd.DataFrame(grafico_despesas, columns=["Motivo", "Valor", "Data"])
     despesas_df["Tipo"] = "Despesa"
 
-    # Concatenando as receitas e despesas
     df = pd.concat([receitas_df, despesas_df])
     df["Data"] = pd.to_datetime(df["Data"])
 
-    # Gerando o gráfico
     import plotly.express as px
     fig = px.line(
         df,
@@ -158,10 +155,8 @@ def home():
     )
     fig.update_layout(xaxis_title="Data", yaxis_title="Valor (R$)")
 
-    # Convertendo o gráfico para HTML e passando para o template
     graph_html = fig.to_html(full_html=False)
 
-    # Retornando o template com os dados e o gráfico
     return render_template(
         'home.html',
         users=users,
@@ -169,7 +164,7 @@ def home():
         despesas=despesas,
         total=saldo,
         perfis=perfis,
-        graph_html=graph_html  # Passando o gráfico para o template
+        graph_html=graph_html
 
 
     )
