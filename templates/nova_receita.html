@@ -106,7 +106,7 @@
     <section class="position-ab" id="c-to-l">
 
         <form class="d-flex" action="{{ url_for('criar_receita') }}" method="post">
-            <div class="azul" id="tabelaazul">
+            <div class="azul2" id="tabelaazul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <label class="info">Valor: </label>
@@ -161,7 +161,9 @@
                     <div class="subquadro2 centraliza d-flex">
                         <a href="{{ url_for('editar_receita', id=receita[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
                         <form action="{{ url_for('deletar_receita', id=receita[0]) }}" method="post">
-                            <button type="submit" class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
+                            <button type="button" class="deletar" onclick="confirmDelete('form-delete-{{ receita[0] }}')">
+                                <img class="lixeira" src="../static/img/deletar.png">
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -171,7 +173,13 @@
 
         </div>
     </section> 
-
+<script>
+    function confirmDelete(formId) {
+        if (confirm("Tem certeza que deseja excluir?")) {
+            document.getElementById(formId).submit()
+        }
+    }
+</script>
 
     <!-- Importando o arquivo JavaScript -->
     <script src="../static/js/codigo.js"></script>

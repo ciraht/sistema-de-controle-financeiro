@@ -160,7 +160,9 @@
                     <div class="subquadro2 centraliza d-flex">
                         <a href="{{ url_for('editar_despesa', id=despesa[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
                         <form action="{{ url_for('deletar_despesa', id=despesa[0]) }}" method="post">
-                            <button type="submit" class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
+                            <button type="button" class="deletar" onclick="confirmDelete('form-delete-{{ despesa[0] }}')">
+                                <img class="lixeira" src="../static/img/deletar.png">
+                            </button>
                         </form>                    </div>
                 </div>
                 {% endfor %}
@@ -169,7 +171,13 @@
 
         </div>
     </section> 
-
+<script>
+    function confirmDelete(formId) {
+        if (confirm("Tem certeza que deseja excluir?")) {
+            document.getElementById(formId).submit()
+        }
+    }
+</script>
 
     <script src="../static/js/codigo.js"></script>
     <footer class="rodape">

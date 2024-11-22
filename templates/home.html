@@ -171,66 +171,77 @@
 
     <div class="espaco"></div>
 
-    <section class="d-evelin">
-        <div class="espaco"></div>
-        <div id="historico">
-            <div class="azul_grafico2">
-                <div class="d-flex espaco_esquerda">
-                    <p class="info2">Dia</p>
-                    <div class="divisao2"></div>
-                    <p class="info2">Valor</p>
-                    <div class="divisao2"></div>
-                    <p class="info2">Fonte</p>
-                </div>
+<section class="d-evelin">
+    <div class="espaco"></div>
+    <div id="historico">
+        <div class="azul_grafico2">
+            <div class="d-flex espaco_esquerda">
+                <p class="info2">Dia</p>
+                <div class="divisao2"></div>
+                <p class="info2">Valor</p>
+                <div class="divisao2"></div>
+                <p class="info2">Fonte</p>
             </div>
-            <div class="grafico2">
-                {% for receita in receitas %}
-                <div class="dado d-flex">
-                    <div class="subquadro_re1 centraliza">
-                        <p>{{ receita[3] }}</p>
-                    </div>
-                    <div class="subquadro_re2 centraliza">
-                        <p>R$ {{ receita[2] }}</p>
-                    </div>
-                    <div class="subquadro_re1 centraliza">
-                        <p>{{ receita[1] }}</p>
-                    </div>
-                    <div class="subquadro_re2 centraliza d-flex">
-                        <a href="{{ url_for('editar_receita', id=receita[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
-                        <form action="{{ url_for('deletar_receita', id=receita[0]) }}" method="post">
-                            <button type="submit" class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
-                        </form>
-                    </div>
-                </div>
-
-                {% endfor %}
-
-                {% for despesa in despesas %}
-                <div class="dado d-flex">
-                    <div class="subquadro_de1 centraliza">
-                        <p>{{ despesa[3] }}</p>
-                    </div>
-                    <div class="subquadro_de2 centraliza">
-                        <p>R$ {{ despesa[2] }}</p>
-                    </div>
-                    <div class="subquadro_de1 centraliza">
-                        <p>{{ despesa[1] }}</p>
-                    </div>
-                    <div class="subquadro_de2 centraliza d-flex">
-                        <a href="{{ url_for('editar_despesa', id=despesa[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
-                        <form action="{{ url_for('deletar_despesa', id=despesa[0]) }}" method="post">
-                            <button type="submit" class="deletar"><img class="lixeira" src="../static/img/deletar.png"></button>
-                        </form>
-                    </div>
-
-
-                </div>
-                {% endfor %}
-                
-            </div>
-
         </div>
-    </section>
+        <div class="grafico2">
+            {% for receita in receitas %}
+            <div class="dado d-flex">
+                <div class="subquadro_re1 centraliza">
+                    <p>{{ receita[3] }}</p>
+                </div>
+                <div class="subquadro_re2 centraliza">
+                    <p>R$ {{ receita[2] }}</p>
+                </div>
+                <div class="subquadro_re1 centraliza">
+                    <p>{{ receita[1] }}</p>
+                </div>
+                <div class="subquadro_re2 centraliza d-flex">
+                    <a href="{{ url_for('editar_receita', id=receita[0]) }}">
+                        <button class="editar"><img class="lapis" src="../static/img/editar.png"></button>
+                    </a>
+                    <form action="{{ url_for('deletar_receita', id=receita[0]) }}" method="post" id="form-delete-{{ receita[0] }}">
+                        <button type="button" class="deletar" onclick="confirmDelete('form-delete-{{ receita[0] }}')">
+                            <img class="lixeira" src="../static/img/deletar.png">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% for despesa in despesas %}
+            <div class="dado d-flex">
+                <div class="subquadro_de1 centraliza">
+                    <p>{{ despesa[3] }}</p>
+                </div>
+                <div class="subquadro_de2 centraliza">
+                    <p>R$ {{ despesa[2] }}</p>
+                </div>
+                <div class="subquadro_de1 centraliza">
+                    <p>{{ despesa[1] }}</p>
+                </div>
+                <div class="subquadro_de2 centraliza d-flex">
+                    <a href="{{ url_for('editar_despesa', id=despesa[0]) }}">
+                        <button class="editar"><img class="lapis" src="../static/img/editar.png"></button>
+                    </a>
+                    <form action="{{ url_for('deletar_despesa', id=despesa[0]) }}" method="post" id="form-delete-{{ despesa[0] }}">
+                        <button type="button" class="deletar" onclick="confirmDelete('form-delete-{{ despesa[0] }}')">
+                            <img class="lixeira" src="../static/img/deletar.png">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+    function confirmDelete(formId) {
+        if (confirm("Tem certeza que deseja excluir?")) {
+            document.getElementById(formId).submit()
+        }
+    }
+</script>
 <br><br>
     <section >
         <div class="grafico">
