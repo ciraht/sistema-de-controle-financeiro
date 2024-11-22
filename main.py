@@ -141,20 +141,33 @@ def home():
     despesas_df = pd.DataFrame(grafico_despesas, columns=["Motivo", "Valor", "Data"])
     despesas_df["Tipo"] = "Despesa"
 
+    # Concatenar os DataFrames de receitas e despesas
     df = pd.concat([receitas_df, despesas_df])
+
+    # Converter a coluna 'Data' para datetime
     df["Data"] = pd.to_datetime(df["Data"])
 
-    import plotly.express as px
+    # Agrupar os dados por mês e converter para string (ex: "2024-11")
+    df["Mes"] = df["Data"].dt.to_period("M").astype(str)
+
+    # Criar o gráfico com a evolução financeira por mês
     fig = px.bar(
         df,
-        x="Data",
+        x="Mes",  # Usar o período mensal no eixo X (agora como string)
         y="Valor",
-        color="Tipo",
-        title="Evolução Financeira",
-        labels={"Valor": "R$"}
+        color="Tipo",  # Diferenciar as barras por Receita e Despesa
+        title="Evolução Financeira Mensal",
+        labels={"Valor": "R$", "Mes": "Mês"}
     )
-    fig.update_layout(xaxis_title="Data", yaxis_title="Valor (R$)")
 
+    # Atualizar o layout para definir os títulos dos eixos
+    fig.update_layout(
+        xaxis_title="Mês",
+        yaxis_title="Valor (R$)",
+        barmode='group'  # Isso faz com que as barras de Receita e Despesa fiquem lado a lado
+    )
+
+    # Gerar o gráfico em formato HTML
     graph_html = fig.to_html(full_html=False)
 
     return render_template(
