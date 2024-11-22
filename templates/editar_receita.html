@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despesas</title>
+    <title>Editar Receitas</title>
     <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,11 +51,42 @@
         </div>
     </header>
 
+    <br><br><br><br>
+    <div class="escuro oculto zindex m-top-small">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+        <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
+            <div class="d-flex">
+                <div class="espaco "></div>
+                <p class="letrao">{{ perfis[1] }}</p>
+                <img class="usuario lado" src="../static/img/usuario.png">
+            </div>
+            <div class="informacoes">
+
+                <div>
+                    <p class="letrao">Data de Nascimento</p>
+                    <p class="letrinha">{{ perfis[3].replace("00:00:00 GMT", "") }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">Email</p>
+                    <p class="letrinha">{{ perfis[4] }}</p>
+                </div><br>
+
+                <div>
+                    <p class="letrao">CPF</p>
+                    <p class="letrinha">{{ perfis[2] }}</p>
+                </div>
+            </div>
+            <div class="d-evelin">
+                <a href="/editar_usuario"><button class="botton letrao">Editar</button></a>
+                <a href="/sair"><button class="botton letrao">Sair da conta</button></a>
+            </div>
+        </div>
+    </div>
+
     <div class="espaco"></div>
 
     <section class="position-ab" id="c-to-l">
-
-        <form class="d-flex" action="{{ url_for('criar_receita') }}" method="post">
+        <form class="d-flex" action="{{ url_for('editar_receita', id=receita[0]) }}" method="post">
             <div class="azul" id="tabelaazul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
@@ -68,26 +99,46 @@
                 <p class="texto_quadro letrao" id="texto-quadro">ALTERE SUA RECEITA</p>
                 <div class="mini-espaco"></div>
 
-                <input type="number" step="0.01" class="inputo"  id="input" name="valor_receita" placeholder="00.00"> <br>
+                <input type="number" step="0.01" class="inputo"  id="input" name="valor_receita" placeholder="00.00" value="{{ receita[2] }}"> <br>
                 <div class="mini-espaco"></div>
 
-                <input type="text" class="inputo"  id="input2" name="motivo_receita" placeholder="Insira a origem da receita"> <br>
+                <input type="text" class="inputo"  id="input2" name="motivo_receita" placeholder="Insira a origem da receita" value="{{ receita[1] }}"> <br>
                 <div class="mini-espaco"></div>
 
-                <input type="date" class="inputo"  id="input3" name="data_receita"><br>
+                <input type="date" class="inputo"  id="input3" name="data_receita" value="{{ receita[3] }}"><br>
                 <div class="mini-espaco"></div>
 
                 <button type="submit" class="botao margin1" id="adicionar">Adicionar</button>
                 <button type="button" class="botao margin2">Cancelar</button>
-            {% endfor %}
             </div>
         </form>
     </section>
+
     <footer class="rodape">
         <img class="logo" src="../static/img/logo.png">
         <p class="letrinha">Todos os direitos reservados</p>
     </footer>
 
+    <script>
+        // Seleciona os elementos
+        const userIcon = document.getElementById("toggleUser");
+        const escuro = document.querySelector(".escuro");
+        const mais = document.querySelector(".mais");
+
+        // Mostra ou oculta as divs ao clicar no ícone do usuário
+        userIcon.addEventListener("click", function () {
+            escuro.classList.toggle("oculto");
+            mais.classList.toggle("oculto");
+        });
+
+        // Esconde as divs ao clicar na div "escuro"
+        escuro.addEventListener("click", function () {
+            if (!escuro.classList.contains("oculto")) {
+                escuro.classList.add("oculto");
+                mais.classList.add("oculto");
+            }
+        });
+    </script>
     <script src="../static/js/codigo.js"></script>
 </body>
 </html>

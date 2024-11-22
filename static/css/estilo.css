@@ -159,13 +159,13 @@
     position: relative;
     margin-bottom: -900px;
     margin-left: 93.5%;
-    
+
 }
 
 .mais .usuario{
     height: 120px;
     margin-left: 50px;
-    
+
 }
 
 .mais p{
@@ -218,7 +218,7 @@
 .pessoa1{
     height: 400px;
     width: 560px;
-    
+
     left: 5%;
     bottom: -150px;
 }
@@ -238,7 +238,7 @@
 .pessoa2{
     height: 400px;
     width: 560px;
-    
+
     left: 10%;
     bottom: -150px;
 }
@@ -258,7 +258,7 @@
 .pessoa3{
     height: 400px;
     width: 560px;
-    
+
     left: 20%;
     bottom: -230px;
 }
@@ -278,7 +278,7 @@
 .pessoa4{
     height: 400px;
     width: 560px;
-    
+
     left: 5%;
     bottom: -150px;
 }
@@ -305,6 +305,14 @@
     margin-top: -35px;
     margin-left: 350px;
     font-size: 150px;
+}
+
+.fundo2-0{
+    background-image: url(../img/fundo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 740px;
 }
 
 .fundo5{
@@ -352,7 +360,7 @@
     height: 390px;
     width: 400px;
 
-    top: -96px;    
+    top: -96px;
 }
 
 .texto-dica1{
@@ -376,7 +384,7 @@
     width: 370px;
 
     top: 25px;
-    right: 50px;    
+    right: 50px;
 }
 
 .texto-dica2{
@@ -398,7 +406,7 @@
     width: 370px;
 
     top: 254px;
-    right: 50px;    
+    right: 50px;
 }
 
 .texto-dica3{
@@ -420,7 +428,7 @@
     width: 370px;
 
     top: 254px;
-    right: 50px;    
+    right: 50px;
 }
 
 .texto-dica4{
@@ -547,8 +555,6 @@
 /* pagina dicas */
 
 .fundo-liso1{
-    width: 100%;
-    height: 600px;
     background-color: pink;
 }
 
@@ -664,11 +670,10 @@
 }
 
 
-
 /* pagina login */
 
 .pessoa-fundo{
-    height: 182.3%;
+    height: 740px;
     margin-left: -10%;
 
 }
@@ -801,19 +806,19 @@
     background-color: #313131;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 .botao:hover {
     background-color: #555555;
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .xis {
     margin-left: 25%;
     color: white;
-    background-color: #bfcc3a; 
+    background-color: #bfcc3a;
     border: none;
     border-radius: 50%;
     height: 0px;
@@ -823,8 +828,8 @@
 }
 
 .xis:hover {
-    background-color: #bbf771; 
-    transform: scale(1.1); 
+    background-color: #bbf771;
+    transform: scale(1.1);
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -838,7 +843,7 @@
 }
 
 .editar {
-    background-color: #fbc12d; 
+    background-color: #fbc12d;
 }
 
 .editar:hover {
@@ -854,7 +859,7 @@
 }
 
 .deletar:hover {
-    background-color: #df2828; 
+    background-color: #df2828;
     transform: scale(1.1);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -1010,6 +1015,21 @@
 
 .m-top-small {
     margin-top:17px;
+}
+
+.fundo-preto{
+    background-color: #000000;
+    height: 300px;
+    width: 100%;
+}
+
+.fundo-preto p{
+    color: #ffffff;
+
+    font-size: 30px;
+
+    margin-left: 120px;
+    margin-height: 300px;
 }
 
 .rodape{

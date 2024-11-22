@@ -43,32 +43,30 @@
             <img class="usuario" id="toggleUser" src="../static/img/usuario.png">
         </div>
     </header>
-<br><br><br><br>
+    <br><br><br><br>
     <div class="escuro oculto zindex m-top-small">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
         <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
             <div class="d-flex">
                 <div class="espaco "></div>
-                {% for perfil in perfis %}
-                <p class="letrao">{{ perfil[0] }}</p>
+                <p class="letrao">{{ perfis[1] }}</p>
                 <img class="usuario lado" src="../static/img/usuario.png">
             </div>
             <div class="informacoes">
 
                 <div>
                     <p class="letrao">Data de Nascimento</p>
-                    <p class="letrinha">{{ perfil[2] }}</p>
+                    <p class="letrinha">{{ perfis[3].replace("00:00:00 GMT", "") }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">Email</p>
-                    <p class="letrinha">{{ perfil[3] }}</p>
+                    <p class="letrinha">{{ perfis[4] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">CPF</p>
-                    <p class="letrinha">{{ perfil[1] }}</p>
+                    <p class="letrinha">{{ perfis[2] }}</p>
                 </div>
-                {% endfor %}
             </div>
             <div class="d-evelin">
                 <a href="/editar_usuario"><button class="botton letrao">Editar</button></a>
