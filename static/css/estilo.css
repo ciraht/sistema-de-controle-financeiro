@@ -307,6 +307,14 @@
     font-size: 150px;
 }
 
+.fundo2-0{
+    background-image: url(../img/fundo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 740px;
+}
+
 .fundo5{
     background-image: url(../img/fundo5.png);
     background-repeat: no-repeat;
@@ -547,8 +555,6 @@
 /* pagina dicas */
 
 .fundo-liso1{
-    width: 100%;
-    height: 600px;
     background-color: pink;
 }
 
@@ -626,13 +632,39 @@
     margin-top: 130px;
 }
 
+.texto-grande{
+    width: 1300px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-top: -12.6%;
+}
+
 .texto-grande .titulo{
     font-size: 40px;
     margin-left: 50px;
 }
 
 .texto-grande .texto{
-    font-size: 20px;
+    font-size: 25px;
+    margin-left: 100px;
+    margin-right: 80px;
+}
+
+.texto-grande2{
+    width: 1300px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-left: 10%;
+}
+
+.texto-grande2 .titulo{
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+.texto-grande2 .texto{
+    font-size: 25px;
     margin-left: 100px;
     margin-right: 80px;
 }
@@ -641,7 +673,7 @@
 /* pagina login */
 
 .pessoa-fundo{
-    height: 182.3%;
+    height: 740px;
     margin-left: -10%;
 
 }
@@ -983,6 +1015,21 @@
 
 .m-top-small {
     margin-top:17px;
+}
+
+.fundo-preto{
+    background-color: #000000;
+    height: 300px;
+    width: 100%;
+}
+
+.fundo-preto p{
+    color: #ffffff;
+
+    font-size: 30px;
+
+    margin-left: 120px;
+    margin-height: 300px;
 }
 
 .rodape{
