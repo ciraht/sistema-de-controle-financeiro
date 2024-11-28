@@ -28,7 +28,7 @@ function fecharHistorico() {
     ajustarEstilo("input3", { width: "450px" });
     ajustarEstilo("texto-quadro", { marginLeft: "0px" });
     ajustarEstilo("adicionar", { marginLeft: "460px" });
-    ajustarEstilo("c-to-l", { left: "215px" });
+    ajustarEstilo("c-to-l", { left: "345px" });
     ajustarEstilo("topo_azul", { width: "0px", height: "0px" });
     ajustarEstilo("baixo_branco", { width: "0px", height: "0px" });
 }
