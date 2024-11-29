@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre-se</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +12,12 @@
 </head>
 <body class="fundo7">
     <section class="d-flex pessoa-fundo">
-        <img src="assets/img/pessoa1.png">
+        <img src="../static/img/pessoa1.png">
         <div class="quadro_login">
             <form action="{{ url_for('editar_usuario') }}" method="post">
 
                 <div class="centraliza">
-                    <img class="logo2" src="assets/img/logo.png">
+                    <img class="logo2" src="../static/img/logo.png">
                     <p class="titulozin letrao">Editar</p>
                     <div class="mini-espaco"></div>
                 </div>
@@ -54,8 +54,12 @@
                 </div>
             </form>
         
-            <script src="assets/js/codigo.js"></script>
+            <script src="../static/js/codigo.js"></script>
         </div>
     </section>
+    <footer class="rodape">
+        <img class="logo" src="../static/img/logo.png">
+        <p class="letrinha">Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>

@@ -4,34 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicas</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="fundo-liso4">
     <header class="cabecalho d-flex">
         <div class="d-evelin">
-            <img class="logo" src="assets/img/logo.png">
+            <img class="logo" src="../static/img/logo.png">
             <div>
                 <p class="letrao texto-logo">Finança</p>
                 <p class="letrao texto-logo">Facil</p>
             </div>
         </div>
         <div class="d-flex caminhos">
-            <a href="index.html"><div class="caminho-verde">
+            <a href="/home"><div class="caminho-verde">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Home</p>
             </div></a>
-            
-            <a href="receitas.html"><div class="caminho-amarelo">
+
+            <a href="/nova_receita"><div class="caminho-amarelo">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Receitas</p>
             </div></a>
-            
-            <a href="despesas.html"><div class="caminho-vermelho">
+
+            <a href="/nova_despesa"><div class="caminho-vermelho">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Despesas</p>
@@ -39,46 +39,38 @@
         </div>
 
         <div>
-            <img class="usuario" id="toggleUser" src="assets/img/usuario.png">
+            <img class="usuario" id="toggleUser" src="../static/img/usuario.png">
         </div>
     </header>
 
-    <div class="escuro oculto">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+    <br><br><br><br>
+    <div class="escuro oculto zindex m-top-small">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
         <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
             <div class="d-flex">
-                <div class="espaco"></div>
-                <p class="letrao">Nome do usuario aqui</p>
-                <img class="usuario" src="assets/img/usuario.png">
+                <div class="espaco "></div>
+                <p class="letrao">{{ perfis[1] }}</p>
+                <img class="usuario lado" src="../static/img/usuario.png">
             </div>
             <div class="informacoes">
-                <div>
-                    <p class="letrao">Nome</p>
-                    <p class="letrinha">{{ user[1] }}</p>
-                </div><br>
 
                 <div>
                     <p class="letrao">Data de Nascimento</p>
-                    <p class="letrinha">{{ user[3] }}</p>
+                    <p class="letrinha">{{ perfis[3].replace("00:00:00 GMT", "") }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">Email</p>
-                    <p class="letrinha">{{ user[4] }}</p>
+                    <p class="letrinha">{{ perfis[4] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">CPF</p>
-                    <p class="letrinha">{{ user[2] }}</p>
-                </div><br>
-
-                <div>
-                    <p class="letrao">Senha</p>
-                    <p class="letrinha">{{ user[5] }}</p>
+                    <p class="letrinha">{{ perfis[2] }}</p>
                 </div>
             </div>
             <div class="d-evelin">
-                <button class="botton letrao"><a href="editar_usuario.html">Editar</a></button>
-                <button class="botton letrao">Sair da conta</button>
+                <a href="/editar_usuario"><button class="botton letrao">Editar</button></a>
+                <a href="/sair"><button class="botton letrao">Sair da conta</button></a>
             </div>
         </div>
     </div>
@@ -106,13 +98,13 @@
 
     <section>
         <div class="fundo-liso4 d-flex">
-            <img class="pensando4 relativo" src="assets/img/dica4.png">
+            <img class="pensando4 relativo" src="../static/img/dica4.png">
             <p class="titulo4 letrao">Como criar um Orçamento de lazer?</p>
         </div>
 
     </section>
 
-    <section class="texto-grande">
+    <section class="texto-grande2">
 
         <div class="mini-espaco"></div>
         <div class="mini-espaco"></div>
@@ -233,5 +225,9 @@
         <div class="mini-espaco"></div>
         <div class="mini-espaco"></div>
     </section>
+    <footer class="rodape">
+        <img class="logo" src="../static/img/logo.png">
+        <p class="letrinha">Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>

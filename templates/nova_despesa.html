@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despesas</title>
-    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -15,26 +15,26 @@
 <body>
     <header class="cabecalho d-flex">
         <div class="d-evelin">
-            <img class="logo" src="assets/img/logo.png">
+            <img class="logo" src="../static/img/logo.png">
             <div>
                 <p class="letrao texto-logo">Finança</p>
                 <p class="letrao texto-logo">Facil</p>
             </div>
         </div>
         <div class="d-flex caminhos">
-            <a href="index.html"><div class="caminho-verde">
+            <a href="/home"><div class="caminho-verde">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Home</p>
             </div></a>
             
-            <a href="receitas.html"><div class="caminho-amarelo">
+            <a href="/nova_receita"><div class="caminho-amarelo">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Receitas</p>
             </div></a>
             
-            <a href="despesas.html"><div class="caminho-vermelho">
+            <a href="/nova_despesa"><div class="caminho-vermelho">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <p class="texto-cabecalho letrao">Despesas</p>
@@ -42,46 +42,38 @@
         </div>
 
         <div>
-            <img class="usuario" id="toggleUser" src="assets/img/usuario.png">
+            <img class="usuario" id="toggleUser" src="../static/img/usuario.png">
         </div>
     </header>
 
-    <div class="escuro oculto">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
+    <br><br><br><br>
+    <div class="escuro oculto zindex m-top-small">    <!-- Dimitri e Tharic, se vcs quiserem ver essa parte, vcs devem clicar no icone do usuario.  -->
         <div class="mais oculto">  <!-- Dimitri, essa parte é o "perfil" do seu documento, então tudo que está no arquivo "perfil" deve vir para cá -->
             <div class="d-flex">
-                <div class="espaco"></div>
-                <p class="letrao">Nome do usuario aqui</p>
-                <img class="usuario" src="assets/img/usuario.png">
+                <div class="espaco "></div>
+                <p class="letrao">{{ perfis[1] }}</p>
+                <img class="usuario lado" src="../static/img/usuario.png">
             </div>
             <div class="informacoes">
-                <div>
-                    <p class="letrao">Nome</p>
-                    <p class="letrinha">{{ user[1] }}</p>
-                </div><br>
 
                 <div>
                     <p class="letrao">Data de Nascimento</p>
-                    <p class="letrinha">{{ user[3] }}</p>
+                    <p class="letrinha">{{ perfis[3].replace("00:00:00 GMT", "") }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">Email</p>
-                    <p class="letrinha">{{ user[4] }}</p>
+                    <p class="letrinha">{{ perfis[4] }}</p>
                 </div><br>
 
                 <div>
                     <p class="letrao">CPF</p>
-                    <p class="letrinha">{{ user[2] }}</p>
-                </div><br>
-
-                <div>
-                    <p class="letrao">Senha</p>
-                    <p class="letrinha">{{ user[5] }}</p>
+                    <p class="letrinha">{{ perfis[2] }}</p>
                 </div>
             </div>
             <div class="d-evelin">
-                <button class="botton letrao"><a href="editar_usuario.html">Editar</a></button>
-                <button class="botton letrao">Sair da conta</button>
+                <a href="/editar_usuario"><button class="botton letrao">Editar</button></a>
+                <a href="/sair"><button class="botton letrao">Sair da conta</button></a>
             </div>
         </div>
     </div>
@@ -111,9 +103,8 @@
     <div class="mini-espaco"></div>
 
     <section class="position-ab" id="c-to-l">
-
-        <form class="d-flex">
-            <div class="azul2" id="tabelaazul">
+        <form class="d-flex" action="{{ url_for('criar_despesa') }}" method="post">
+            <div class="azul" id="tabelaazul">
                 <div class="mini-espaco"></div>
                 <div class="mini-espaco"></div>
                 <label class="info">Valor: </label>
@@ -122,19 +113,19 @@
             </div>
             <div class="adicionar" id="tabela">
                 <div class="mini-espaco"></div>
-                <p class="texto_quadro letrao" id="texto-quadro">ADICIONE SUA RECEITA</p>
+                <p class="texto_quadro letrao" id="texto-quadro">ADICIONE SUA DESPESA</p>
                 <div class="mini-espaco"></div>
                 
-                <input type="number" class="inputo"  id="input" placeholder="  00.00"> <br>
+                <input type="number" step="0.01" class="inputo"  id="input" name="valor_despesa" placeholder="00.00"> <br>
                 <div class="mini-espaco"></div>
 
-                <input type="text" class="inputo"  id="input2" placeholder="  Insira a origem da receita"> <br>
+                <input type="text" class="inputo"  id="input2" name="motivo_despesa" placeholder="Insira a origem da despesa"> <br>
                 <div class="mini-espaco"></div>
     
-                <input type="date" class="inputo"  id="input3"><br>
+                <input type="date" class="inputo"  id="input3" name="data_despesa" ><br>
                 <div class="mini-espaco"></div>
     
-                <button type="button" class="botao margin1" id="adicionar">Adicionar</button>
+                <button type="submit" class="botao margin1" id="adicionar">Adicionar</button>
                 <button type="button" class="botao margin2" onclick="mostrarHistorico()">Ver Histórico</button>
                 
             </div>
@@ -153,21 +144,25 @@
                     <button class="xis" id="exit" onclick="fecharHistorico()">X</button>
                 </div>
             </div>
-            <div class="grafico" id="baixo_branco">
+            <div class="grafico3" id="baixo_branco">
+                {% for despesa in despesas %}
                 <div class="dado d-flex">
                     <div class="subquadro1 centraliza">
-                        <p>{{ receita[3] }}</p>
+                        <p>{{ despesa[3] }}</p>
                     </div>
                     <div class="subquadro2 centraliza">
-                        <p>{{ receita[2] }}</p>
+                        <p>R$ {{ despesa[2] }}</p>
                     </div>
                     <div class="subquadro1 centraliza">
-                        <p>{{ receita[1] }}</p>
+                        <p>{{ despesa[1] }}</p>
                     </div>
-                    <div class="subquadro2 centraliza">
-                        <button class="editar"><img class="lapis" src="assets/img/edit_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
-                        <button class="deletar"><img class="lixeira" src="assets/img/delete_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"></button>
-                    </div>
+                    <div class="subquadro2 centraliza d-flex">
+                        <a href="{{ url_for('editar_despesa', id=despesa[0]) }}"><button class="editar"><img class="lapis" src="../static/img/editar.png"></button></a>
+                        <form action="{{ url_for('deletar_despesa', id=despesa[0]) }}" method="post">
+                            <button type="button" class="deletar" onclick="confirmDelete('form-delete-{{ despesa[0] }}')">
+                                <img class="lixeira" src="../static/img/deletar.png">
+                            </button>
+                        </form>                    </div>
                 </div>
                 {% endfor %}
                 
@@ -175,9 +170,18 @@
 
         </div>
     </section> 
+<script>
+    function confirmDelete(formId) {
+        if (confirm("Tem certeza que deseja excluir?")) {
+            document.getElementById(formId).submit()
+        }
+    }
+</script>
 
-
-    <!-- Importando o arquivo JavaScript -->
-    <script src="assets/js/codigo.js"></script>
+    <script src="../static/js/codigo.js"></script>
+    <footer class="rodape">
+        <img class="logo" src="../static/img/logo.png">
+        <p class="letrinha">Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>

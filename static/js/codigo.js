@@ -27,18 +27,18 @@ function fecharHistorico() {
     ajustarEstilo("input2", { width: "450px" });
     ajustarEstilo("input3", { width: "450px" });
     ajustarEstilo("texto-quadro", { marginLeft: "0px" });
-    ajustarEstilo("adicionar", { marginLeft: "450px" });
-    ajustarEstilo("c-to-l", { left: "215px" });
+    ajustarEstilo("adicionar", { marginLeft: "460px" });
+    ajustarEstilo("c-to-l", { left: "345px" });
     ajustarEstilo("topo_azul", { width: "0px", height: "0px" });
     ajustarEstilo("baixo_branco", { width: "0px", height: "0px" });
 }
 //mudar imagens e cores da tela de inicio
 
 const pessoas = [
-    { class: 'pessoa1', image: 'assets/img/pessoa1.png', bgColor: 'pessoa1_cor', fundo: 'assets/img/fundo1.png' },
-    { class: 'pessoa2', image: 'assets/img/pessoa2.png', bgColor: 'pessoa2_cor', fundo: 'assets/img/fundo2.png' },
-    { class: 'pessoa3', image: 'assets/img/pessoa3.png', bgColor: 'pessoa3_cor', fundo: 'assets/img/fundo3.png' },
-    { class: 'pessoa4', image: 'assets/img/pessoa4.png', bgColor: 'pessoa4_cor', fundo: 'assets/img/fundo4.png' },
+    { class: 'pessoa1', image: 'static/img/pessoa1.png', bgColor: 'pessoa1_cor', fundo: 'static/img/fundo1.png' },
+    { class: 'pessoa2', image: 'static/img/pessoa2.png', bgColor: 'pessoa2_cor', fundo: 'static/img/fundo2.png' },
+    { class: 'pessoa3', image: 'static/img/pessoa3.png', bgColor: 'pessoa3_cor', fundo: 'static/img/fundo3.png' },
+    { class: 'pessoa4', image: 'static/img/pessoa4.png', bgColor: 'pessoa4_cor', fundo: 'static/img/fundo4.png' },
 ];
 
 
